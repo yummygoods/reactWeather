@@ -1,0 +1,47 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(216, 247, 255);
+  min-width: 320px;
+  max-width: 520px;
+  min-height: 20rem;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.greeting {
+  font-size: 2rem;
+  margin: .5rem;
+  /* margin: .25rem; */
+}
+
+#unicorn {
+  background-color: #ffffff;
+  border-radius: 50%;
+  font-size: 4rem;
+  animation: bobble 2s infinite;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  /* animation: float 2s ease-in-out infinite; */
+}
+
+@keyframes bobble {
+	0% {
+			transform: translateY(4px);
+			animation-timing-function: ease-in;
+	}
+	50% {
+			transform: translateY(8px);
+			animation-timing-function: ease-out;
+	}
+	100% {
+			transform: translateY(4px);
+	}
+}
