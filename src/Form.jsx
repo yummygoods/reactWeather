@@ -5,38 +5,41 @@ import { useEffect } from "react";
 export default function Form(){
 
 const [city, setCity] = useState("");
-const [result, setResult] = useState("");
+// const [result, setResult] = useState("");
 
-const handleChange = (event)=>{
-  const updatedCity = event.target.value;
-  setCity(updatedCity);
-  console.log(city);
-}
 
-useEffect((city)=> {
-  fetch(`https://api.weatherapi.com/v1/current.json?key=d01e96a14a9449a7a6f152442231805&q=02668&aqi=no`)
+
+useEffect(()=> {
+  fetch(`https://api.weatherapi.com/v1/current.json?key=d01e96a14a9449a7a6f152442231805&q=${city}&aqi=no`)
   .then(response => response.json())
-     .then(currentData => {
-      setResult(currentData);
-     })
-    return result}, [city, result]);
+     .then(data => {
+ console.log(data)
+     });
+  }, [city]);
 
-function  showWeather() {
- return(
-    <div id="weather">
-    <h3>{result.location.name} 
-    <br/>
-    {result.current.temp_f} {result.current.condition.text}
-    </h3>
-    </div>);
-}
-  
+  const handleChange = (event)=>{
+    const updatedCity = event.target.value;
+    setCity(updatedCity);
+    console.log("changed!" + city);
+  }
+
+
+
+
   return(
 <form id="cityForm" type="submit"> 
   <label htmlFor="city">enter your city or zip code</label>
-  <input name="city" id="city" type="text"  value={city} onChange={handleChange} />
-  <button onSubmit={showWeather}  type="submit">submit</button>
-
+  <input name="city" id="city" type="text"  onChange={handleChange} value={city}  />
+  <button type="submit">submit</button>
+  <div id="weather">
+   <h3>
+ </h3> 
+  </div>
   </form>
   )
   }
+
+  // {currentData.location.name} 
+  // <br/>
+  //  {currentData.current.temp_f} {currentData.current.condition.text}
+
