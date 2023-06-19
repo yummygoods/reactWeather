@@ -2,7 +2,7 @@ import "./result.css"
 
 export default function Result(){
 return(
-<div>
+<section>
   <div id="weather">
   {/* <!-- populates with data -->
 
@@ -21,7 +21,7 @@ return(
 
   <!-- populates with data --> */}
 </div>
-</div>
+</section>
 
 )
 }
