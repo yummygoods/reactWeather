@@ -43,8 +43,8 @@ export default function Form() {
 				submit
 			</button>
 			<div id="weather">
-        {/* <h3>{weather.location.name}</h3> 
-       <h3>{weather.current.temp_f}</h3>  */}
+        <h3>{weather.location?.name ? weather.location.name : ''}</h3> 
+       <h3>{weather.current?.temp_f ? weather.current.temp_f : '' }</h3> 
 			</div>
 		</form>
 	);
