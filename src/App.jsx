@@ -1,26 +1,31 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 
-import './App.css'
+import './App.css';
 
-import Header from './Header'
-import Body from './Body'
-import Footer from './Footer'
-
-
+import Header from './Header';
+import Body from './Body';
+import Footer from './Footer';
 
 function App() {
-  // const [count, setCount] = useState(0)
 
-  return (
-    <>
-    <Header />
-    <Body />
-    <Footer />
-     
-   
-    
-    </>
-  )
+function blah(){
+console.log("testing blah")
 }
 
-export default App
+function toggleForm(){
+ console.log("testing toggle")
+}
+
+	return (
+		<>
+			<Header />
+			<Body 
+     
+     toggleForm={toggleForm}
+      />
+			<Footer  blah={blah}  />
+		</>
+	);
+}
+
+export default App;
