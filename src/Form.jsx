@@ -46,7 +46,9 @@ export default function Form() {
 			<button type="submit" onClick={handleClick}>
 				submit
 			</button>
-			<Result weather={weather.currentWeather && {weather}}/>
+			<Result locationName={weather.location?.name}  currentWeather={weather.current}/>
+			{/* <Result locationName={weather.location.name}  currentWeather={weather.current}/> */}
+			{/* <Result weather={weather.currentWeather && {weather}}/> */}
 			{/* {shouldShowResult && <Result 
 			location={weather.location} 
 			current={weather.current} 
