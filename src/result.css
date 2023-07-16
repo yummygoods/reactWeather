@@ -1,0 +1,10 @@
+#weather {
+	display:flex;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+	background-color:hsl(0, 0%, 100%);
+	max-width: 300px; 
+	min-width: 250px;
+	margin-top: 1rem;
+}
