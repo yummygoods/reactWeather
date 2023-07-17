@@ -1,24 +1,42 @@
 import './form.css';
-import { useState, useEffect } from 'react';
-import useSWR from 'swr';
+import { useState } from 'react';
+import Result from './Result.jsx';
 
 export default function Form() {
 	const [city, setCity] = useState('');
+	// const [shouldShowResult, setShouldShowResult] = useState(false);
 	const [weather, setWeather] = useState({ data: '' });
+
+	const [astroData, setAstroData] = useState({ data: '' });
 
 	const handleChange = (e) => {
 		setCity(e.target.value);
 		return city;
 	};
-	let url = `https://api.weatherapi.com/v1/current.json?key=d01e96a14a9449a7a6f152442231805&q=${city}&aqi=no`;
+
+	let currentUrl = `https://api.weatherapi.com/v1/current.json?key=d01e96a14a9449a7a6f152442231805&q=${city}&aqi=no`;
+
+	let astroUrl = `https://api.weatherapi.com/v1/astronomy.json?key=d01e96a14a9449a7a6f152442231805&q=${city}&aqi=no`;
+
+
+
+async function fetchAstro() {
+	const response = await fetch(astroUrl);
+	const currentAstro = await response.json();
+	console.log(currentAstro);
+	setAstroData(currentAstro);
+	return astroData;
+
+	
+}
 
 	async function fetchWeather() {
 		console.log('inside fetch function');
-		const response = await fetch(url);
+		const response = await fetch(currentUrl);
 		const currentWeather = await response.json();
-    console.log(currentWeather);
+		console.log(currentWeather);
 		setWeather(currentWeather);
-		// console.log(weather);
+		return weather;
 	}
 
 	const handleClick = (e) => {
@@ -26,8 +44,11 @@ export default function Form() {
 		e.preventDefault();
 		console.log('default was prevented');
 		fetchWeather();
-		console.log(city);
-	}; 
+		fetchAstro();
+		setCity('');
+	};
+
+
 
 	return (
 		<form id="cityForm">
@@ -42,11 +63,22 @@ export default function Form() {
 			<button type="submit" onClick={handleClick}>
 				submit
 			</button>
-			<div id="weather">
-        <h3>{weather.location?.name ? weather.location.name : ''}</h3> 
-       <h3>{weather.current?.temp_f ? weather.current.temp_f : '' }</h3> 
-			</div>
+
+			<Result 
+			locationName={weather.location?.name} currentWeather={weather.current}
+	astro={astroData.astronomy?.astro}
+	// sunset={astroData.astronomy.astro.sunset}
+	/>
+		
+	
 		</form>
 	);
 }
 
+	// {/* <Result locationName={weather.location.name}  currentWeather={weather.current}/> */}
+	// 		{/* <Result weather={weather.currentWeather && {weather}}/> */}
+	// 		{/* {shouldShowResult && <Result 
+	// 		location={weather.location} 
+	// 		current={weather.current} 
+			
+	// 		/>} */}

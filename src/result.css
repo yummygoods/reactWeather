@@ -1,0 +1,16 @@
+#result {
+	display:flex;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+
+}
+
+#result h3{
+background-color:hsl(0, 0%, 100%);
+padding: 0, .5rem;
+margin:.25rem;
+max-width: 300px; 
+min-width: 250px;
+
+}

@@ -1,6 +1,8 @@
 import './footer.css';
+// import {useState} from "react"
 
-export default function Footer() {
+export default function Footer(props) {
+console.log(props)
 	return (
 		<footer>
      
@@ -8,11 +10,11 @@ export default function Footer() {
       <div id='flowerContainer'>
 			<span className="emoji">🌼</span>
 			<div className="animationContainer">
-				<a className="easterEgg" href="about.html">
-					<span id="twistFlower" className="emoji">
+		
+					<span onClick={()=> {props.blah} } id="twistFlower" className="emoji">
 						🌼
 					</span>
-				</a>
+				
 			</div>
 
 			<span className="emoji">🌼</span>
