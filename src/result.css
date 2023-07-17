@@ -1,13 +1,12 @@
-#weather , #astro {
+#result {
 	display:flex;
 	flex-direction: column;
 	align-content: center;
 	align-items: center;
 
-
 }
 
-.result {
+#result h3{
 background-color:hsl(0, 0%, 100%);
 padding: 0, .5rem;
 margin:.25rem;

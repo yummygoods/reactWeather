@@ -7,8 +7,9 @@ import Body from './Body';
 import Footer from './Footer';
 
 function App() {
+const [shouldShowEasterEgg, setShouldShowEasterEgg] = useState(false);
 
-function blah(){
+function handleEgg(){
 console.log("testing blah")
 }
 
@@ -23,7 +24,9 @@ function toggleForm(){
      
      toggleForm={toggleForm}
       />
-			<Footer  blah={blah}  />
+			<Footer    />
+
+			{/* <Footer  shouldShowEasterEgg={}  />  */}
 		</>
 	);
 }

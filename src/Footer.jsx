@@ -10,11 +10,11 @@ console.log(props)
       <div id='flowerContainer'>
 			<span className="emoji">🌼</span>
 			<div className="animationContainer">
-				{/* <a className="easterEgg" href="about.html"> */}
-					<span onClick={()=> {props.blah} }id="twistFlower" className="emoji">
+		
+					<span onClick={()=> {props.blah} } id="twistFlower" className="emoji">
 						🌼
 					</span>
-				{/* </a> */}
+				
 			</div>
 
 			<span className="emoji">🌼</span>
