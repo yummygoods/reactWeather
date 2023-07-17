@@ -63,12 +63,14 @@ async function fetchAstro() {
 			<button type="submit" onClick={handleClick}>
 				submit
 			</button>
+
 			<Result 
 			locationName={weather.location?.name} currentWeather={weather.current}
 	astro={astroData.astronomy?.astro}
 	// sunset={astroData.astronomy.astro.sunset}
 	/>
 		
+	
 		</form>
 	);
 }
