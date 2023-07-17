@@ -1,10 +1,17 @@
-#weather #astro{
+#weather , #astro {
 	display:flex;
 	flex-direction: column;
 	align-content: center;
 	align-items: center;
-	background-color:hsl(0, 0%, 100%);
-	max-width: 300px; 
-	min-width: 250px;
-	margin-top: 1rem;
+
+
+}
+
+.result {
+background-color:hsl(0, 0%, 100%);
+padding: 0, .5rem;
+margin:.25rem;
+max-width: 300px; 
+min-width: 250px;
+
 }

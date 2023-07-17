@@ -26,7 +26,7 @@ async function fetchAstro() {
 	console.log(currentAstro);
 	setAstroData(currentAstro);
 	return astroData;
-	console.log(astroData);
+
 	
 }
 
@@ -65,7 +65,9 @@ async function fetchAstro() {
 			</button>
 			<Result 
 			locationName={weather.location?.name} currentWeather={weather.current}
-	sunrise={astroData.astro}/>
+	astro={astroData.astronomy?.astro}
+	// sunset={astroData.astronomy.astro.sunset}
+	/>
 		
 		</form>
 	);
