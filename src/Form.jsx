@@ -26,6 +26,8 @@ async function fetchAstro() {
 	console.log(currentAstro);
 	setAstroData(currentAstro);
 	return astroData;
+	console.log(astroData);
+	
 }
 
 	async function fetchWeather() {
@@ -35,7 +37,6 @@ async function fetchAstro() {
 		console.log(currentWeather);
 		setWeather(currentWeather);
 		return weather;
-		fetchAstro();
 	}
 
 	const handleClick = (e) => {
@@ -43,11 +44,9 @@ async function fetchAstro() {
 		e.preventDefault();
 		console.log('default was prevented');
 		fetchWeather();
+		fetchAstro();
 		setCity('');
 	};
-
-	// console.log(weather.location?.name);
-	console.log(weather, astroData);
 
 
 
@@ -65,8 +64,8 @@ async function fetchAstro() {
 				submit
 			</button>
 			<Result 
-			locationName={weather.location?.name}  currentWeather={weather.current}
-			astroData={astroData.astronomy.astro}/>
+			locationName={weather.location?.name} currentWeather={weather.current}
+	sunrise={astroData.astro}/>
 		
 		</form>
 	);
