@@ -1,6 +1,10 @@
 # reactWeather
-To get some experience with React, I rebuilt a simple vanilla javascript weather app I made.
-Both versions are in progress and have not yet benefited from a refactoring
+
+🌈🦄
+
+To get some experience with React, I rebuilt a simple (but Very Cute) vanilla javascript weather app I made.
+
+Both versions are in progress and have not yet benefited from a refactoring!
 
 **react version:** https://statuesque-travesseiro-24624f.netlify.app/
 
