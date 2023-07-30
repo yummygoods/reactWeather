@@ -22,3 +22,4 @@ https://vitejs.dev/guide/static-deploy.html
 - add images to sunrise + sunset
 - add degree symbol
 - idehay piaay eykay
+- add placeholder zip code
